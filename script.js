@@ -6,7 +6,7 @@ function setup() {
 
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
-  rootElem.textContent = '';
+  rootElem.textContent = ""
   for (let i = 0; i < rootElem.length; i++) {
     rootElem[i].innerHTML = episodeList;
     
