@@ -1556,10 +1556,11 @@ let myEpisodes = [{
 let output = '';
 let cont = document.getElementById("root");
 
-function displayData({name, season, number, image, summary}) {
+function displayData({name, season, number, image, summary,}) {
 
 
-  output += `<div class="card" onclick= href= ${myEpisodes.url}> 
+  output += `<div class="card" onclick="href= ${myEpisodes.forEach(Object =>(Object.url))}"> 
+  <select id="list" onchange="getSelectValue();"><option value="<h1 class="card--title">${name} - S${season} E${number}</h1></option> </select>
   <button type="button" class="button"><h1 class="card--title">${name} - S${season} E${number}</h1></button>
   <img src=${image.medium} alt="">
   <h3 class="">${summary}</h3>
@@ -1573,3 +1574,35 @@ function displayData({name, season, number, image, summary}) {
 myEpisodes.forEach(displayData);
 
 cont.innerHTML = output;
+
+
+// SEARCH BUTTON
+
+function search_episode() {
+  let input = document.getElementById('searchbar').value
+  input=input.toLowerCase();
+  let x = document.getElementsByClassName('card');
+    
+  for (i = 0; i < x.length; i++) { 
+      if (!x[i].innerHTML.toLowerCase().includes(input)) {
+          x[i].style.display="none";
+      }
+      else {
+          x[i].style.display="list-item";                 
+      }
+  }
+}
+
+// SELECT OPTION
+function getSelectValue()
+{
+    var selectedValue = document.getElementById("list").value;
+    let x = document.getElementsByClassName('.card--title');
+    console.log(selectedValue, x);
+}
+getSelectValue();
+
+
+
+
+
