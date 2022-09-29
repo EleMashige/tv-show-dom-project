@@ -1560,7 +1560,6 @@ function displayData({name, season, number, image, summary,}) {
 
 
   output += `<div class="card" onclick="href= ${myEpisodes.forEach(Object =>(Object.url))}"> 
-  <select id="list" onchange="getSelectValue();"><option value="<h1 class="card--title">${name} - S${season} E${number}</h1></option> </select>
   <button type="button" class="button"><h1 class="card--title">${name} - S${season} E${number}</h1></button>
   <img src=${image.medium} alt="">
   <h3 class="">${summary}</h3>
@@ -1594,13 +1593,16 @@ function search_episode() {
 }
 
 // SELECT OPTION
-function getSelectValue()
+let select = document.getElementById("select");
+
+for(var i = 0; i < myEpisodes.length; i++)
 {
-    var selectedValue = document.getElementById("list").value;
-    let x = document.getElementsByClassName('.card--title');
-    console.log(selectedValue, x);
+    let option = document.createElement("option"),
+        txt = document.createTextNode(myEpisodes[i]);
+    option.appendChild(txt);
+    option.setAttribute("value",myEpisodes[i]);
+    select.insertBefore(option,select.lastChild);
 }
-getSelectValue();
 
 
 
