@@ -1571,6 +1571,18 @@ function displayData({name, season, number, image, summary,}) {
 
     </div> `;
 
+    // create option using DOM
+const newOption = document.createElement('option');
+const optionText = document.createTextNode(`${name} - S${season}E${number}`);
+// set option text
+newOption.appendChild(optionText);
+// and option value
+newOption.setAttribute('value','Option Value');
+
+const select = document.querySelector('select'); 
+select.appendChild(newOption);
+
+
 }
 myEpisodes.forEach(displayData);
 
@@ -1595,21 +1607,5 @@ function search_episode() {
 }
 
 // SELECT OPTION
-let select = document.getElementById("select");
-
-var myElements = document.getElementsByClassName("card--title");
-
-for(var i = 0; i < myElements.length; i++){
-
-    let option = document.createElement("option"),
-        txt = document.createTextNode(myElements[i]);
-    option.appendChild(txt);
-    option.setAttribute("value",myElements[i]);
-    select.insertBefore(option,select.lastChild);
-}
 
 
-// var myElements = document.getElementsByClassName("some_class_name");
-// for(var i = 0; i < myElements.length; i++){
-// 	console.log(myElements[i]);
-// }
