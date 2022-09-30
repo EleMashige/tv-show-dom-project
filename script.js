@@ -1568,7 +1568,7 @@ function displayData({name, season, number, image, summary,}) {
   <button type="button" class="button"><h1 class="card--title">${name} - S${season}E${number}</h1></button>
   <img src=${image.medium} alt="">
   <h3 class="">${summary}</h3>
-
+  <div id="result"></div>
     </div> `;
 
 // SELECT OPTION
@@ -1581,9 +1581,10 @@ newOption.appendChild(optionText);
 newOption.setAttribute('value','Option Value');
 
 const select = document.querySelector('select'); 
-select.appendChild(newOption);
 
+select.appendChild(newOption);
 }
+
 
 
 myEpisodes.forEach(displayData);
