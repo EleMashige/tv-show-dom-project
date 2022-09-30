@@ -1558,17 +1558,21 @@ let cont = document.getElementById("root");
 
 function displayData({name, season, number, image, summary,}) {
 
+// To make sure numbers from 1 to 9 starts with 0:
+  if(number.toString().length < 2)
+  number= "0"+number;
+  if(season.toString().length < 2)
+  season= "0"+season;
 
   output += `<div class="card" onclick="href= ${myEpisodes.forEach(Object =>(Object.url))}"> 
-  <button type="button" class="button"><h1 class="card--title">${name} - S${season} E${number}</h1></button>
+  <button type="button" class="button"><h1 class="card--title">${name} - S${season}E${number}</h1></button>
   <img src=${image.medium} alt="">
   <h3 class="">${summary}</h3>
 
-            
     </div> `;
 
-
 }
+
 
 myEpisodes.forEach(displayData);
 
