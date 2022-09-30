@@ -1571,9 +1571,10 @@ function displayData({name, season, number, image, summary,}) {
 
     </div> `;
 
+// SELECT OPTION
     // create option using DOM
 const newOption = document.createElement('option');
-const optionText = document.createTextNode(`${name} - S${season}E${number}`);
+const optionText = document.createTextNode(`S${season}E${number} - ${name}`);
 // set option text
 newOption.appendChild(optionText);
 // and option value
@@ -1582,12 +1583,12 @@ newOption.setAttribute('value','Option Value');
 const select = document.querySelector('select'); 
 select.appendChild(newOption);
 
-
 }
+
+
 myEpisodes.forEach(displayData);
 
 cont.innerHTML = output;
-
 
 // SEARCH BUTTON
 
@@ -1606,6 +1607,6 @@ function search_episode() {
   }
 }
 
-// SELECT OPTION
+
 
 
