@@ -1572,8 +1572,6 @@ function displayData({name, season, number, image, summary,}) {
     </div> `;
 
 }
-
-
 myEpisodes.forEach(displayData);
 
 cont.innerHTML = output;
@@ -1599,16 +1597,19 @@ function search_episode() {
 // SELECT OPTION
 let select = document.getElementById("select");
 
-for(var i = 0; i < myEpisodes.length; i++)
-{
+var myElements = document.getElementsByClassName("card--title");
+
+for(var i = 0; i < myElements.length; i++){
+
     let option = document.createElement("option"),
-        txt = document.createTextNode(myEpisodes[i]);
+        txt = document.createTextNode(myElements[i]);
     option.appendChild(txt);
-    option.setAttribute("value",myEpisodes[i]);
+    option.setAttribute("value",myElements[i]);
     select.insertBefore(option,select.lastChild);
 }
 
 
-
-
-
+// var myElements = document.getElementsByClassName("some_class_name");
+// for(var i = 0; i < myElements.length; i++){
+// 	console.log(myElements[i]);
+// }
