@@ -1564,11 +1564,11 @@ function displayData({name, season, number, image, summary,}) {
   if(season.toString().length < 2)
   season= "0"+season;
 
-  output += `<div class="card" onclick="href= ${myEpisodes.forEach(Object =>(Object.url))}"> 
+  output += `<div id="result" class="card" onclick="href= ${myEpisodes.forEach(Object =>(Object.url))}"> 
   <button type="button" class="button"><h1 class="card--title">${name} - S${season}E${number}</h1></button>
   <img src=${image.medium} alt="">
   <h3 class="">${summary}</h3>
-  <div id="result"></div>
+  id="result"
     </div> `;
 
 // SELECT OPTION
@@ -1581,8 +1581,11 @@ newOption.appendChild(optionText);
 newOption.setAttribute('value','Option Value');
 
 const select = document.querySelector('select'); 
-
 select.appendChild(newOption);
+
+select_episode.onchange = function() {
+  result.innerHTMLText = this.value;
+}
 }
 
 
