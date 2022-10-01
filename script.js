@@ -1564,11 +1564,10 @@ function displayData({name, season, number, image, summary,}) {
   if(season.toString().length < 2)
   season= "0"+season;
 
-  output += `<div id="result" class="card" onclick="href= ${myEpisodes.forEach(Object =>(Object.url))}"> 
+  output += `<div id="content" class="card" onclick="href= ${myEpisodes.forEach(Object =>(Object.url))}"> 
   <button type="button" class="button"><h1 class="card--title">${name} - S${season}E${number}</h1></button>
   <img src=${image.medium} alt="">
   <h3 class="">${summary}</h3>
-  id="result"
     </div> `;
 
 // SELECT OPTION
@@ -1583,16 +1582,17 @@ newOption.setAttribute('value','Option Value');
 const select = document.querySelector('select'); 
 select.appendChild(newOption);
 
-select_episode.onchange = function() {
-  result.innerHTMLText = this.value;
-}
+
 }
 
-
+function displayDivDemo(id, elementValue) {
+  document.getElementById(id).style.display = elementValue.value == 1 ? 'block' : 'none';
+}
 
 myEpisodes.forEach(displayData);
 
 cont.innerHTML = output;
+
 
 // SEARCH BUTTON
 
@@ -1612,5 +1612,11 @@ function search_episode() {
 }
 
 
+
+
+// let slct = document.getElementById("episodes");
+// let slctval = slct.value;
+// let res = document.getElementById("result");
+// res.innerText = slctval;
 
 

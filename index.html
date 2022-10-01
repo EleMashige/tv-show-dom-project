@@ -9,10 +9,11 @@
   </head>
 
   <body>
-    <select id="select_episode">
+    <select id="select" onchange="displayDivDemo('content', this)">
       <option value="default">All</option>
     
   </select>
+
 
     <input id="searchbar" onkeyup="search_episode()" type="text"
         name="search" placeholder="Search Episode..">
