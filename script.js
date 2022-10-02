@@ -1582,10 +1582,11 @@ newOption.setAttribute('value','Option Value');
 const select = document.querySelector('select'); 
 select.appendChild(newOption);
 
+
 const selectedEpisode = document.querySelector('select'); 
 
 selectedEpisode.addEventListener('change', function () {
-    for (let otherDiv of document.querySelectorAll('#default div')) {
+    for (let otherDiv of document.querySelectorAll('#content')) {
         otherDiv.style.display = 'none';
     }
     
