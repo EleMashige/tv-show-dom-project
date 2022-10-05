@@ -1552,7 +1552,7 @@ let myEpisodes = [{
 
 
 
-//Display Data
+//DISPLAY DATA
 let output = '';
 let cont = document.getElementById("root");
 
@@ -1563,6 +1563,7 @@ function displayData({name, season, number, image, summary,}) {
   number= "0"+number;
   if(season.toString().length < 2)
   season= "0"+season;
+  // To make sure numbers from 1 to 9 starts with 0:
 
   output += `<div id="content" class="card" onclick="href= ${myEpisodes.forEach(Object =>(Object.url))}"> 
   <button type="button" class="button"><h1 class="card--title">${name} - S${season}E${number}</h1></button>
@@ -1581,8 +1582,10 @@ newOption.setAttribute('value','Option Value');
 
 const select = document.querySelector('select'); 
 select.appendChild(newOption);
+// SELECT OPTION
 
 
+// When the user makes a selection, they should be taken directly to that episode in the list
 const selectedEpisode = document.querySelector('select'); 
 
 selectedEpisode.addEventListener('change', function () {
@@ -1593,13 +1596,14 @@ selectedEpisode.addEventListener('change', function () {
     const div = document.getElementById(this.value);
     div.style.display = 'block';
 });
+// When the user makes a selection, they should be taken directly to that episode in the list
 
 }
-
 
 myEpisodes.forEach(displayData);
 
 cont.innerHTML = output;
+//DISPLAY DATA
 
 
 // SEARCH BUTTON
@@ -1618,13 +1622,7 @@ function search_episode() {
       }
   }
 }
+// SEARCH BUTTON
 
-
-
-
-// let slct = document.getElementById("episodes");
-// let slctval = slct.value;
-// let res = document.getElementById("result");
-// res.innerText = slctval;
 
 
